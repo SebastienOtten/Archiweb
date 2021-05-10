@@ -5,6 +5,8 @@ import Creation from './Creation'
 import Filmlist from './Filmlist'
 import About from './About'
 import Fiche from './Fiche'
+import Categorielist from './Categorielist'
+
 
 
 Vue.use(VueRouter)
@@ -16,6 +18,8 @@ export default new VueRouter({
         {path: "/creation", component: Creation},
         {path: "/about", component: About},
         {path: "/fiche/:nomdufilm", name:'fiche', component: Fiche},
+        {path: "/categorielist", component: Categorielist},
+        
         
     ]
 })

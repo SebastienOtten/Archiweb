@@ -1,7 +1,7 @@
 <template>
 
     <div id="Creation">
-        <h1>Création d'une fiche de film</h1>
+        <h1>Nouvelle fiche de film</h1>
 <div class="formulaire">
 Nom du film :     
 <input type="text" v-model="film.nomdufilm" placeholder="Titanic" required><br>
@@ -13,10 +13,19 @@ Synopsis :
 <input type="text" v-model="film.synopsis" placeholder="C'est l'histoire d'un paquebot qui ne devait pas couler ..."><br>
 Note attribuée :
 <input type="number" min="0" max="5" v-model="film.note" placeholder="4" required><br>
+Catégorie :
+<select name="nomcategorie" v-model="film.nomcategorie">
+    <option value="Action">Action</option>
+    <option value="Drame">Drame</option>
+    <option value="Comedie">Comédie</option>
+    <option value="Horreur">Horreur</option>
+    <option value="Romance">Romance</option>
+    <option value="Thriller">Thriller</option>
+    </select> <br />
 Commentaire :
 <input type="text" v-model="film.commentaire" placeholder="C'était très émouvant"><br>
 
-<button type="submit" v-on:click="postFilm">Enregistrer</button>
+<button type="submit" v-on:click="postFilm" >Enregistrer</button>
 </div>
 
     </div> 
@@ -38,6 +47,7 @@ import Film from './film'
                 acteur:"",
                 synopsis:"",
                 note:0,
+                nomcategorie:"",
                 commentaire:""
             },
             filmlist:[],
@@ -45,6 +55,11 @@ import Film from './film'
              }
         },
         methods: {
+             createFilm(){
+                 if(this.nomdufilm === ''){
+        this.onError('Please fill in all fields of the form')
+        return}},
+           
             postFilm(){
                 axios.post(this.url, this.film)
                 .then((response)=>{

@@ -23,6 +23,7 @@ export default {
                 acteur:"",
                 synopsis:"",
                 note:0,
+                nomcategorie:"",
                 commentaire:""
             },
             filmlist:[],

@@ -5,9 +5,11 @@
         
         <div id="nav">
             <p>
-        <router-link to="/filmlist" class="lien">Voir la liste des films</router-link>
-        <router-link to="/Creation" class="lien">Créer une fiche de film</router-link>
+        <router-link to="/filmlist" class="lien">Liste des films</router-link>
+        <router-link to="/Creation" class="lien">Création d'une fiche</router-link>
+        <router-link to="/Categorielist" class="lien">Catégories</router-link>
         <router-link to="/About" class="lien">A propos de nous</router-link>
+        
             </p>
         
         

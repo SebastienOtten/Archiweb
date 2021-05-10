@@ -20,6 +20,9 @@
 <em>Note (sur 5) :</em>  {{film.note}}</p>
 <p>
 <br>
+<em>Catégorie :</em>  {{film.nomcategorie}}</p>
+<p>
+<br>
 <em>Commentaire :</em>  {{film.commentaire}}</p>   
      
         
