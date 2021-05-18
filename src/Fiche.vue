@@ -1,5 +1,6 @@
 <template>
   <div id="Fiche">
+      
 <h1>Fiche du film : {{film.nomdufilm}}</h1> 
 
 <div>
@@ -90,6 +91,8 @@ export default {
     text-align: left;
     width: 40%;
     margin: auto;
+    padding: 5px;
+    background-color: var(--base-color);
 }
 
 button{
@@ -101,4 +104,8 @@ em{
     font-style: normal;
     font-weight: bold;
 }
+@media (max-width : 800px) {
+      #Fiche p{
+        width: auto;
+    }}
 </style>

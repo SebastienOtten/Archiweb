@@ -1,5 +1,6 @@
 <template>
   <div id="film">
+      
 
     <h3>{{film.nomdufilm}}</h3>
 <div v-if="showInput">
@@ -7,23 +8,23 @@
 <em>Nom du film :</em> {{film.nomdufilm}} </p>
 <p>
 <br>
-<em>Réalisateur :</em>   {{film.realisateur}}
+<label for="realisateur"><em>Réalisateur :</em> </label>  {{film.realisateur}}
 <input type="text" v-model="film.realisateur"></p>
 <p>
 <br>
-<em>Acteurs :</em>  {{film.acteur}}  
+<label for="acteur"><em>Acteurs :</em></label>  {{film.acteur}}  
 <input type="text" v-model="film.acteur"> </p>
 <p>
 <br>
-<em>Synopsis :</em>  {{film.synopsis}} 
+<label for="Synopsis"><em>Synopsis :</em></label>  {{film.synopsis}} 
 <input type="text" v-model="film.synopsis"></p>
 <p>
 <br>
-<em>Note (sur 5) :</em>  {{film.note}}
+<label for="note"><em>Note (sur 5) :</em></label> {{film.note}}
 <input type="number" min="0" max="5" v-model="film.note"></p>
 <p>
 <br>
-<em>Catégorie :</em>  {{film.nomcategorie}}
+<label for="categorie"><em>Catégorie :</em></label> {{film.nomcategorie}}
 <select type="text" v-model="film.nomcategorie">
     <option value="Action">Action</option>
     <option value="Drame">Drame</option>
@@ -34,7 +35,7 @@
 </select></p>  
 <p>
 <br>
-<em>Commentaire :</em>  {{film.commentaire}}
+<label for="commentaire"><em>Commentaire :</em></label>  {{film.commentaire}}
 <input type="text" v-model="film.commentaire"></p>   
 
 <button v-on:click="updateFilm(film)">Sauver</button> 
@@ -42,9 +43,9 @@
 </div>   
 
 <div v-if="!showInput">
-   <button v-on:click="goFiche(film.nomdufilm)" title="Voir les informations">Consulter</button>
-    <button v-on:click="showInput = ! showInput" title="Modifier la fiche">Modifier</button>
-    <button v-on:click="deleteFilm(film.nomdufilm)" title="Supprimer cette fiche">Supprimer</button>
+   <button v-on:click="goFiche(film.nomdufilm)" title="Voir les informations" tabindex="5">Consulter</button>
+    <button v-on:click="showInput = ! showInput" title="Modifier la fiche" tabindex="6">Modifier</button>
+    <button v-on:click="deleteFilm(film.nomdufilm)" title="Supprimer cette fiche" tabindex="7">Supprimer</button>
 </div>
     
     
@@ -91,10 +92,13 @@ export default {
 <style>
 #film{
     background-color: var(--base-color);
-    width: 300px;
+    width: 70%;
     margin: 5px auto;
     padding: 5px;
     color: var(--third-color);
 }
-
+@media (max-width : 800px) {
+    em, p {
+        font-size: small;
+    }}
 </style>

@@ -36,3 +36,10 @@ export default {
         }   
 
 </script>
+
+<style>
+    #categorie{
+        width: 70%;
+    }
+
+</style>

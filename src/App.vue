@@ -1,6 +1,6 @@
 <template>
+<div id="app"><h1>ActuFilm</h1>
 
-  <div id="app"><h1>ActuFilm</h1>
 
   <Header></Header>
   <Footer></Footer>
@@ -60,7 +60,7 @@ body {/*couleur bleue base*/
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin: 60px;
+  margin: 10px;
   padding: 60px;
   background-color: var(--base-color);
                     
@@ -69,7 +69,13 @@ h1 {
   color: var(--third-color);
 }
 
+@media (max-width : 800px) {
+#app{
+  margin: 5px;
+  padding: 30px;
+}
 
+}
 
 
 

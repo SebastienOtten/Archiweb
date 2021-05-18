@@ -57,14 +57,17 @@ export default {
     background-color:var(--second-color);
     margin: 10px auto;
     padding: 5px;
-    width: 500px;
     border-radius: 10px;
     
 }
 #categorie {
     background-color: var(--base-color);
-    width: 300px;
+    
     margin: 5px auto;
     padding: 5px;
 }
+@media (max-width : 800px) {
+    #Categorielist{
+        width: auto;
+    }}
 </style>

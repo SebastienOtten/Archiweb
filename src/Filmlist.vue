@@ -1,5 +1,6 @@
 <template>
   <div id="filmlist"><h1>Liste des films</h1>
+  
 
   <div v-for="film in filmlist" :key="film.nomdufilm"> 
       <Film v-bind:film="film"  @event_delete="deleteFilm" @event_update="updateFilm"></Film>
@@ -78,8 +79,11 @@ export default {
     background-color:var(--second-color);
     margin: 10px auto;
     padding: 5px;
-    width: 500px;
     border-radius: 10px;
     
 }
+@media (max-width : 800px) {
+    #filmlist{
+        width: auto;
+    }}
 </style>

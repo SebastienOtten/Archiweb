@@ -1,16 +1,19 @@
 <template>
     <div id="Header">
+       
         <p> Bienvenue sur le site qui répertorie tous les films et qui vous permet d'avoir toutes les informations les concernant! </p>
         
         
         <div id="nav">
-            <p>
-        <router-link to="/filmlist" class="lien">Liste des films</router-link>
-        <router-link to="/Creation" class="lien">Création d'une fiche</router-link>
-        <router-link to="/Categorielist" class="lien">Catégories</router-link>
-        <router-link to="/About" class="lien">A propos de nous</router-link>
+        <ul>
         
-            </p>
+        <li><router-link to="/filmlist" class="lien" tabindex="1">Liste des films</router-link></li>
+        <li><router-link to="/Creation" class="lien" tabindex="2">Création d'une fiche</router-link></li>
+        <li><router-link to="/Categorielist" class="lien" tabindex="3">Catégories</router-link></li>
+        <li><router-link to="/About" class="lien" tabindex="4">A propos de nous</router-link></li>
+        
+        </ul>
+        
         
         
         <router-view></router-view>
@@ -41,22 +44,40 @@
 #Header{
     padding: 5px;
     text-align: center;
-    margin: 5px auto;
+    margin:  auto;
     color: var(--third-color);
     background-color: var(--second-color);
     border-radius: 10px;
 }
-#nav p{
+#nav ul{
+    display: flex;
+    text-align: center;
     background-color: var(--base-color);
-    padding: 5px;
+}
+#nav li{
+    
+    display: flex;
+    margin: auto;
+    
+    
 }
 .lien{
     color: var(--third-color);
-    padding: 10px;
     margin: auto;
     text-decoration: none;
+    padding: 5px;
+    
 }
 a:hover{
     color: var(--second-color);
+}
+@media (max-width : 800px) {
+p,h1,h3, li {
+        font-size: small;
+    }
+#nav ul{
+   flex-direction: column;
+}
+
 }
 </style>
